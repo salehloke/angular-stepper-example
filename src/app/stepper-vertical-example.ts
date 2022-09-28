@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'stepper-vertical-example',
   templateUrl: 'stepper-vertical-example.html',
-  styleUrls: ['stepper-vertical-example.css']
+  styleUrls: ['stepper-vertical-example.css'],
 })
 export class StepperVerticalExample implements OnInit {
   isLinear = false;
@@ -18,30 +18,30 @@ export class StepperVerticalExample implements OnInit {
     {
       entity: 'Tranglo Sdn Bhd',
       department: 'Finance',
-      role: 'Admin'
+      role: 'Admin',
     },
     {
       entity: 'Tranglo Private Limited',
       department: 'Finance',
-      role: 'Admin'
+      role: 'Admin',
     },
     {
       entity: 'xxx Sdn Bhd',
       department: 'Compliance',
-      role: 'Finance'
-    }
+      role: 'Finance',
+    },
   ];
 
-  constructor(private _formBuilder: FormBuilder) {}
-
-  ngOnInit() {
+  constructor(private _formBuilder: FormBuilder) {
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      firstCtrl: ['', Validators.required],
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      secondCtrl: ['', Validators.required],
     });
   }
+
+  ngOnInit() {}
 }
 
 /**  Copyright 2021 Google LLC. All Rights Reserved.

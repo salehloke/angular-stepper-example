@@ -1,13 +1,14 @@
-import {HttpClientModule} from '@angular/common/http';
-import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DemoMaterialModule} from './app/material-module';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FirstFormGroupComponent } from './app/first-form-group/first-form-group.component';
+import { DemoMaterialModule } from './app/material-module';
 
-import {StepperVerticalExample} from './app/stepper-vertical-example';
+import { StepperVerticalExample } from './app/stepper-vertical-example';
 
 @NgModule({
   imports: [
@@ -17,17 +18,18 @@ import {StepperVerticalExample} from './app/stepper-vertical-example';
     HttpClientModule,
     DemoMaterialModule,
     MatNativeDateModule,
+
     ReactiveFormsModule,
   ],
   entryComponents: [StepperVerticalExample],
-  declarations: [StepperVerticalExample],
-  bootstrap: [StepperVerticalExample]
+  declarations: [StepperVerticalExample, FirstFormGroupComponent],
+  bootstrap: [StepperVerticalExample],
 })
 export class AppModule {}
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
-
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.error(err));
 
 /**  Copyright 2021 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

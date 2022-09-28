@@ -1,72 +1,15 @@
-<button class="btn btn-primary" (click)="isLinear = !isLinear" id="toggle-linear">
+<button
+  class="btn btn-primary"
+  (click)="isLinear = !isLinear"
+  id="toggle-linear"
+>
   {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
 </button>
 <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out Account Details</ng-template>
-      <!-- Account Name -->
-      <div class="row">
-        <div class="col-md-6">
-          <mat-form-field appearance="outline">
-            <mat-label>Account Name / Login ID</mat-label>
-            <mat-select>
-              <mat-option value="1">Kai Yen</mat-option>
-              <mat-option value="2">Yin Yin</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
-      <!-- Email Address -->
-      <div class="row">
-        <div class="col-md-6">
-          <mat-form-field appearance="outline">
-            <mat-label>Email Address</mat-label>
-            <input type="email" matInput placeholder="Your Email address" formControlName="firstCtrl" required>
-          </mat-form-field>
-        </div>
-      </div>
-      <!-- name -->
-      <div class="row">
-        <div class="col-md-6">
-          <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-          </mat-form-field>
-        </div>
-      </div>
-      <!-- Account Status -->
-
-      <div class="row">
-        <div class="col-md-12">
-          <mat-form-field appearance="outline">
-            <mat-label>Account status </mat-label>
-            <mat-select>
-              <mat-option value="1">Active</mat-option>
-              <mat-option value="2">Inactive</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
-      <div>
-        <!-- time zone -->
-
-        <div class="row">
-          <div class="col-md-12">
-            <mat-form-field appearance="outline">
-              <mat-label>Time Zone </mat-label>
-              <mat-select>
-                <mat-option value="1">Timezone 1</mat-option>
-                <mat-option value="2">Timezone 2</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-        </div>
-
-        <!-- next button -->
-        <button class="btn btn-outline-primary" matStepperNext>Next</button>
-      </div>
-    </form>
+    <app-first-form-group
+      [firstFormGroup]="firstFormGroup"
+    ></app-first-form-group>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
@@ -105,14 +48,25 @@
         </div>
         <!-- action button row -->
         <div class="row mb-2">
-          <div class="col-sm mb-2 d-flex flex-row justify-content-end align-items-end">
+          <div
+            class="
+              col-sm
+              mb-2
+              d-flex
+              flex-row
+              justify-content-end
+              align-items-end
+            "
+          >
             <button class="btn btn-secondary mr-2" type="submit">Add</button>
-            <button class="btn btn-outline-info mr-2" type="button">Reset</button>
+            <button class="btn btn-outline-info mr-2" type="button">
+              Reset
+            </button>
           </div>
         </div>
       </div>
       <div>
-        <table class="table table-bordered table-striped ">
+        <table class="table table-bordered table-striped">
           <thead class="thead-dark">
             <th colspan="4">Role List</th>
           </thead>
@@ -128,28 +82,32 @@
               <td>{{item.department}}</td>
               <td>{{item.role}}</td>
               <td>
-                <button class="btn btn-danger btm-sm"><i class="mdi mdi-delete"></i>Delete</button>
+                <button class="btn btn-danger btm-sm">
+                  <i class="mdi mdi-delete"></i>Delete
+                </button>
               </td>
             </tr>
             <tr>
               <td colspan="4">
-                <hr>
+                <hr />
               </td>
             </tr>
-
-
           </tbody>
         </table>
       </div>
       <div>
-        <button class="btn btn-outline-secondary" matStepperPrevious>Back</button>
+        <button class="btn btn-outline-secondary" matStepperPrevious>
+          Back
+        </button>
         <button class="btn btn-outline-primary" matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-    <p class="mb-4">You are now done. Are you sure you want to submit this data?</p>
+    <p class="mb-4">
+      You are now done. Are you sure you want to submit this data?
+    </p>
     <div class="mt-4 col-6">
       <!-- Summary -->
       <table class="table">
@@ -181,7 +139,6 @@
     </div>
   </mat-step>
 </mat-stepper>
-
 
 <!-- Copyright 2021 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
